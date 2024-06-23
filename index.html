@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Customizable Layout</title>
+</head>
+<body>
+  <div class="container">
+    <div class="main-image" id="mainImage">
+      <img src="/MainBackground.jpeg" alt="Main Background">
+      <img id="badgeImage" class="badge top-left" src="TopBackground-removebg-preview.png" alt="Badge">
+    </div>
+    <div class="content">
+      <h2 id="doctorName">Dr. Ernie Sanderson</h2>
+      <h1 id="headline">Veterinarian-Approved</h1>
+      <pre id="bodyText">   All products Dr.Ernie's are vetted and <br>
+        approved by a qualified veterinarian, ensuring top-<br>
+        quality care for your pet.</pre>
+      <a id="button" href="#" class="button">View Products</a>
+    </div>
+  </div>
+
+  <div class="customizer">
+    <h3>Customizer</h3>
+    <label for="badgePosition">Badge Position:</label>
+    <select id="badgePosition" onchange="updateBadgePosition(this.value)">
+      <option value="top-left">Top Left</option>
+      <option value="top-right">Top Right</option>
+      <option value="bottom-left">Bottom Left</option>
+      <option value="bottom-right">Bottom Right</option>
+    </select>
+
+    <label for="doctorNameInput">Doctor's Name:</label>
+    <input type="text" id="doctorNameInput" oninput="updateText('doctorName', this.value)" placeholder="Enter doctor's name">
+
+    <label for="headlineInput">Headline:</label>
+    <input type="text" id="headlineInput" oninput="updateText('headline', this.value)" placeholder="Enter headline">
+
+    <label for="bodyTextInput">Body Text:</label>
+    <textarea id="bodyTextInput" oninput="updateText('bodyText', this.value)" placeholder="Enter body text"></textarea>
+
+    <label for="buttonTextInput">Button Text:</label>
+    <input type="text" id="buttonTextInput" oninput="updateButton(document.getElementById('buttonUrlInput').value, this.value)" placeholder="Enter button text">
+
+    <label for="buttonUrlInput">Button URL:</label>
+    <input type="text" id="buttonUrlInput" oninput="updateButton(this.value, document.getElementById('buttonTextInput').value)" placeholder="Enter button URL">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
